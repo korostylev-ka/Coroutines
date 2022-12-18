@@ -109,10 +109,6 @@ suspend fun getPosts(client: OkHttpClient): List<Post> =
     makeRequest("$BASE_URL/api/slow/posts", client, object : TypeToken<List<Post>>() {})
 
 //запрос комментариев
-suspend fun getComments(client: OkHttpClient, id: Long): List<Comment> =
-    makeRequest("$BASE_URL/api/slow/posts/$id/comments", client, object : TypeToken<List<Comment>>() {})
-
-//запрос комментариев
 suspend fun getCommentsWithAuthors(client: OkHttpClient, id: Long): List<CommentWithAuthor> =
     makeRequest("$BASE_URL/api/slow/posts/$id/comments", client, object : TypeToken<List<CommentWithAuthor>>() {})
 
